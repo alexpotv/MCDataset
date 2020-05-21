@@ -7,4 +7,5 @@ As for now, this project is intented to regroup Minecraft world data into .json 
 ## Features
 
 - [x] Creating a dataset.json file for a Minecraft world
-- [ ] Reading a dataset.json file to create a Minecraft world from
+- [x] Reading a dataset.json file to create a Minecraft world from
+- [ ] Creating a machine learning model to generate Minecraft worlds
