@@ -70,6 +70,6 @@ for chunk in loaded_chunks:
 
 world_dict = {'metadata': {'name': name, 'authors': authors, 'source': source, 'date': date}, 'chunks': whole_chunks}
 
-with open('MCDataset.json', 'a', encoding='utf-8') as json_file:
+with open('datasets/dataset.json', 'a', encoding='utf-8') as json_file:
     json.dump(world_dict, json_file, ensure_ascii=False, indent=4)
     json_file.write('\n')
