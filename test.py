@@ -1,16 +1,24 @@
+import json
 import anvil
 
-region0 = anvil.Region.from_file('worlds/New World2/region/r.0.0.mca')
-region1 = anvil.Region.from_file('worlds/New World2/region/r.0.-1.mca')
-# You can also provide the region file name instead of the object
-chunk0 = anvil.Chunk.from_region(region0, 0, 0)
-chunk1 = anvil.Chunk.from_region(region1, 0, -3)
+region = anvil.Region.from_file('worlds/Test/region/r.0.0.mca')
 
-print(chunk0 == chunk1)
+# You can also provide the region file name instead of the object
+chunk = anvil.Chunk.from_region(region, 0, 0)
 
 # If `section` is not provided, will get it from the y coords
 # and assume it's global
+block = chunk.get_block(0, 0, 0)
 
-block = chunk1.get_block(0, 0, 13)
+print(block) # <Block(minecraft:air)>
+print("minecraft:" + str(block.id))
 
-print(block)
+a = {'Name': 'Alex'}
+b = {'Name': 'Arianne'}
+
+dicts = [a, b]
+
+for a in dicts:
+    with open('names.json', 'a', encoding='utf-8') as json_file:
+        json.dump(a, json_file, ensure_ascii=False, indent=4)
+        json_file.write('\n')
